@@ -1,0 +1,16 @@
+@import '../../../assets/scss/colors';
+
+p {
+    color: $blue;
+    background-color: $light-gray;
+}
+
+div {
+    border: 1px solid $one-two-three;
+    p {
+        color: $one-two-three;
+    }
+    &:hoover {
+        border: 2px solid $blue;
+    }
+}

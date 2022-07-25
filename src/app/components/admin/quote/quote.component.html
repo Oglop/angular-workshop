@@ -1,0 +1,33 @@
+<h1 *ngIf="!edit">insert quote</h1>
+<h1 *ngIf="edit">update quote</h1>
+<div class="quote-form">
+
+        <div class="form-field">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Quote Name</mat-label>
+                <input matInput placeholder="Quote Name" [(ngModel)]="quote.name" (keyup)="calculateProgress()">
+              </mat-form-field>
+        </div>
+        
+        
+        <div class="form-field">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Quote text</mat-label>
+                <textarea matInput placeholder="Hello..." [(ngModel)]="quote.text" (keyup)="calculateProgress()"></textarea>
+              </mat-form-field>
+        </div>
+        
+        <div class="form-field">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Movie</mat-label>
+                <input matInput placeholder="Movie Name" [(ngModel)]="quote.movieName" (keyup)="calculateProgress()">
+            </mat-form-field>
+        </div>
+
+          <div>
+            <button color="primary" mat-button="addQuoteButton" (click)="save()"  [disabled]="progressValue != 100">Add</button>
+          </div>
+      
+          <mat-progress-bar class="progressBar" mode="determinate" [value]="progressValue"></mat-progress-bar>
+</div>
+
